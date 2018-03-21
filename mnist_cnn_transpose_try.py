@@ -12,7 +12,7 @@ c1 = tf.layers.conv2d(x, 32, 3, 1, 'same', activation=tf.nn.relu)
 c1_pool = tf.layers.max_pooling2d(c1, 2, 2, 'same')
 # 14,14,32 -> 7,7,64
 c2 = tf.layers.conv2d(c1_pool, 64, 3, 1, 'same', activation=tf.nn.relu)
-c2_pool = tf.layers.max_pooling2d(c2, 2, 2, 'same')
+c2_pool = tf.layers.max_pooling2d(c2, 2, 2, 'same'),
 # 7,7,64 -> 7*7*64 -> 1024 -> 10
 c2_flat = tf.reshape(c2_pool, [-1, 7 * 7 * 64])
 c3 = tf.layers.dense(c2_flat, 1024)
