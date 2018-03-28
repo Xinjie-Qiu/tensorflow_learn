@@ -22,7 +22,6 @@ y = tf.layers.dense(fc1, 10)
 
 loss = tf.losses.softmax_cross_entropy(onehot_labels=y_, logits=y)
 train_op = tf.train.AdamOptimizer(0.001).minimize(loss)
-
 accuracy = tf.metrics.accuracy(labels=tf.arg_max(y_, 1), predictions=tf.arg_max(y, 1))[1]
 
 config = tf.ConfigProto(log_device_placement=True)
